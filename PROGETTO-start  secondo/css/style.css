@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background: rgb(23, 104, 23);
+    display: flex;
+}
+img{
+    width: 100px;
+}
+.gioco{
+    border: 1px, solid, rgb(180, 196, 54);
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 1000px;
+}
+.carte{
+    border: 1px, solid, lime;
+    width: calc(25% - 10px);
+    height: 33.33%;
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+.carte.flip{
+    transform: rotateY(180deg);
+}
+.carte:active{
+    transform: scale(0.95);
+    transition: transform 0.2s;
+}
+.fronte, .retro{
+    border: 1px, solid, rgb(45, 147, 191);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    backface-visibility: hidden;
+}
+.fronte{
+    transform: rotateY(180deg);
+}
